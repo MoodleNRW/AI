@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -39,4 +38,192 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Neue Timeline Stile */
+.timeline-container-visual {
+  position: relative;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+/* Die vertikale Linie */
+.timeline-container-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #ddd;
+  z-index: -1; /* Hinter die Elemente legen */
+}
+
+.timeline-item {
+  position: relative;
+  width: calc(50% - 40px); /* Breite der Items, mit Abstand zur Mitte */
+  margin-bottom: 50px;
+  padding: 20px; /* Mehr Innenabstand */
+  background-color: #fff; /* Hintergrund für Items */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  cursor: pointer; /* Behalte Cursor */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.timeline-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Abwechselnde Positionierung */
+.timeline-item.left {
+  left: 0;
+  margin-left: 20px; /* Abstand vom linken Rand */
+}
+
+.timeline-item.right {
+  left: 50%;
+  margin-left: 20px; /* Abstand von der Mittellinie */
+}
+
+/* Punkt auf der Linie */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #bbb;
+  border: 3px solid #ddd;
+  top: 20px; /* Position des Punkts anpassen */
+  z-index: 1;
+}
+
+.timeline-item.left::after {
+  right: -48px; /* Punkt rechts positionieren (Abstand + halbe Linienbreite + halbe Punktbreite) */
+}
+
+.timeline-item.right::after {
+  left: -48px; /* Punkt links positionieren */
+}
+
+/* Verbindungslinie vom Punkt zur Box */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 26px; /* Höhe des Punkts + Border / 2 */
+  width: 28px; /* Abstand zum Punkt - halbe Punktbreite */
+  height: 2px;
+  background-color: #ddd;
+  z-index: 0; /* Hinter dem Punkt */
+}
+
+.timeline-item.left::before {
+  right: -28px; /* Linie nach rechts */
+}
+
+.timeline-item.right::before {
+  left: -28px; /* Linie nach links */
+}
+
+/* Styling innerhalb des Items anpassen */
+.timeline-item h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.timeline-item .date-period {
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 10px;
+  display: block; /* Eigene Zeile */
+}
+
+.timeline-item .tags-container {
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Styling für Meilensteine anpassen */
+.timeline-item.milestone {
+  border-color: #6a4c93; /* Lila Rand */
+  background-color: #f8f7fa; /* Heller lila Hintergrund */
+}
+
+/* Punkt für Meilensteine anpassen */
+.timeline-item.milestone::after {
+  background-color: #6a4c93; /* Lila Punkt */
+  border-color: #e0d8f0;
+  /* Optional: Andere Form, z.B. Quadrat */
+  /* border-radius: 0; */ 
+}
+
+/* Linie für Meilensteine anpassen */
+.timeline-item.milestone::before {
+   background-color: #c7b3e0;
+}
+
+/* Styling für Projekte mit Bezug zu Meilensteinen */
+.timeline-item:not(.milestone)[data-has-related="true"] {
+  border-left: 5px solid #fdc500; /* Beispiel: Gelber linker Rand */
+}
+
+/* Styling für shortSummary */
+.timeline-item .short-summary {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Styling für Bild-Container in Timeline */
+.timeline-item-image-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  max-height: 150px; /* Maximale Höhe für das Vorschaubild */
+  overflow: hidden; /* Verhindert Überlaufen */
+  border-radius: 4px;
+  text-align: center; /* Zentriert das Bild, falls kleiner */
+}
+
+.timeline-item-image {
+  max-width: 100%;
+  max-height: 150px; /* Stellt sicher, dass das Bild nicht höher als der Container wird */
+  height: auto; /* Behält Seitenverhältnis bei */
+  display: inline-block; /* Korrigiert evtl. Leerraum unter dem Bild */
+}
+
+/* Anpassungen für kleinere Bildschirme */
+@media screen and (max-width: 900px) {
+  .timeline-container-visual::before {
+    left: 20px; /* Linie nach links verschieben */
+  }
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: calc(100% - 60px); /* Volle Breite minus Abstand */
+    left: 0; /* Alle links positionieren */
+    margin-left: 40px; /* Abstand von der Linie */
+  }
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: -30px; /* Punkt anpassen */
+  }
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+     left: -10px; /* Linie nach links anpassen */
+     width: 10px;
+  }
 }

@@ -1,10 +1,14 @@
 import React from 'react';
+import ReactMarkdown, { Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Project } from '../types/data';
 import { getUseCaseStyle, getTechnologyConceptStyle } from '../styles/categoryStyles';
+import { getImageUrl } from '../utils/imageUtils';
 
 interface ProjectModalProps {
   project: Project | null;
   onClose: () => void;
+  allProjects: Project[];
 }
 
 const modalOverlayStyle: React.CSSProperties = {
@@ -43,20 +47,34 @@ const closeButtonStyle: React.CSSProperties = {
   color: '#888',
 };
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+// Definiere die Komponenten-Overrides
+const markdownComponents: Components = {
+  a: ({ href, children, ...props }) => (
+    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+      {children}
+    </a>
+  ),
+};
+
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, allProjects }) => {
   if (!project) {
-    return null; // Render nothing if no project is selected
+    return null;
   }
 
+  // Finde die verknüpften Meilensteine
+  const relatedMilestones = project.relatedMilestoneIds
+    ? allProjects.filter(p => project.relatedMilestoneIds?.includes(p.id))
+    : [];
+
   return (
-    <div style={modalOverlayStyle} onClick={onClose}> {/* Close on overlay click */} 
-      <div style={modalContentStyle} onClick={(e) => e.stopPropagation()}> {/* Prevent closing when clicking inside content */} 
+    <div style={modalOverlayStyle} onClick={onClose}> 
+      <div style={modalContentStyle} onClick={(e) => e.stopPropagation()}> 
         <button style={closeButtonStyle} onClick={onClose}>&times;</button>
         <h2>{project.name}</h2>
-        <p><strong>Datum / Zeitraum:</strong> {project.specificDate} / {project.period}</p>
-        <p><strong>Status:</strong> {project.status}</p>
+        <p><strong>Datum / Zeitraum:</strong> {project.dateOrPeriod}</p>
+        {project.type !== 'external_milestone' && <p><strong>Status:</strong> {project.status}</p>}
         
-        {project.useCases.length > 0 && (
+        {project.type !== 'external_milestone' && project.useCases.length > 0 && (
           <div style={{ marginBottom: '15px' }}>
             <strong>Use Cases:</strong>
             <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '5px' }}>
@@ -78,16 +96,54 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           </div>
         )}
 
-        {project.technologies && (
+        {project.type !== 'external_milestone' && project.technologies && (
           <p><strong>Technologien:</strong> {project.technologies}</p>
         )}
         
-        <div style={{ marginTop: '15px' }}>
-          <strong>Was wurde gemacht / Ergebnisse:</strong>
-          <p style={{ whiteSpace: 'pre-wrap' }}>{project.insights}</p> {/* pre-wrap to respect newlines in insights */} 
-        </div>
+        {project.insights && (
+          <div style={{ marginTop: '15px' }}>
+            <strong>Beschreibung / Ergebnisse:</strong>
+            <ReactMarkdown 
+              remarkPlugins={[remarkGfm]}
+              components={markdownComponents}
+            >
+              {project.insights.summary.join('\n\n')}
+            </ReactMarkdown>
+          </div>
+        )}
 
-        {/* Optional: Hier könnten Links etc. hinzugefügt werden */} 
+        {/* Bilder-Galerie im Modal - jetzt mit getImageUrl */} 
+        {project.imageUrls && project.imageUrls.length > 0 && (
+          <div style={{ marginTop: '25px', paddingTop: '15px', borderTop: '1px solid #eee' }}>
+            <h4>Bilder / Screenshots:</h4>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              {project.imageUrls.map((jsonPath, index) => {
+                const imageUrl = getImageUrl(jsonPath);
+                return imageUrl ? (
+                  <img 
+                    key={index} 
+                    src={imageUrl}
+                    alt={`${project.name} Bild ${index + 1}`} 
+                    style={{ maxWidth: '100%', maxHeight: '300px', height: 'auto', border: '1px solid #eee', borderRadius: '4px' }} 
+                  />
+                ) : null;
+              })}
+            </div>
+          </div>
+        )}
+
+        {relatedMilestones.length > 0 && (
+          <div style={{ marginTop: '25px', paddingTop: '15px', borderTop: '1px solid #eee' }}>
+            <h4>Bezug zu späteren Entwicklungen:</h4>
+            <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+              {relatedMilestones.map(milestone => (
+                <li key={milestone.id} style={{ marginBottom: '5px' }}>
+                  <strong>{milestone.dateOrPeriod}:</strong> {milestone.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

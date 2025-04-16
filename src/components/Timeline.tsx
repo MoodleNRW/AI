@@ -7,9 +7,10 @@ import projectsData from '../data/projects.json';
 interface TimelineProps {
   onProjectHover: (categories: (UseCaseCategory | TechnologyConcept)[]) => void;
   onProjectClick: (project: Project) => void;
+  activeFilters: (UseCaseCategory | TechnologyConcept)[];
 }
 
-const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick }) => {
+const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick, activeFilters }) => {
   const projects: Project[] = projectsData as Project[];
 
   // Projekte nach specificDate sortieren (aufsteigend)
@@ -17,19 +18,38 @@ const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick }) =
     return new Date(a.specificDate).getTime() - new Date(b.specificDate).getTime();
   });
 
+  // Filtere zuerst externe Meilensteine heraus
+  const internalProjects = sortedProjects.filter(p => p.type !== 'external_milestone');
+
+  // Wende dann die aktiven Filter an
+  const filteredProjects = activeFilters.length === 0 
+    ? internalProjects // Wenn keine Filter aktiv sind, zeige alle internen Projekte
+    : internalProjects.filter(project => { // Sonst filtere
+        // Kombiniere Use Cases und Konzepte des Projekts
+        const projectCategories = [
+          ...project.useCases,
+          ...(project.technologyConcepts || [])
+        ];
+        // Prüfe, ob ALLE aktiven Filter in den Projektkategorien enthalten sind
+        return activeFilters.every(filter => projectCategories.includes(filter));
+      });
+
   return (
-    <div className="timeline-container">
-      <h2>Project Timeline</h2>
-      {sortedProjects.length > 0 ? (
-        // Sortierte Projekte mappen
-        sortedProjects.map(project => (
-          <ProjectItem 
-            key={project.id} 
-            project={project} 
-            onHover={onProjectHover}
-            onClick={onProjectClick}
-          />
-        ))
+    <div className="timeline-container-visual">
+      {filteredProjects.length > 0 ? (
+        // Gefilterte Projekte mappen
+        filteredProjects.map((project, index) => {
+          const positionClass = index % 2 === 0 ? 'left' : 'right'; // Abwechselnd links/rechts
+          return (
+            <ProjectItem 
+              key={project.id} 
+              project={project} 
+              onHover={onProjectHover}
+              onClick={onProjectClick}
+              positionClass={positionClass} // Position-Klasse übergeben
+            />
+          );
+        })
       ) : (
         <p>No projects to display.</p>
       )}

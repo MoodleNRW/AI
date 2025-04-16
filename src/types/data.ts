@@ -12,12 +12,16 @@ export type TechnologyConcept = string; // Vorerst als String, könnte spezifisc
 
 export interface Project {
   id: string; // Eindeutige ID für React Keys
-  period: string; // z.B. '2023 – Q1'
-  specificDate: string; // YYYY-MM-DD Format für Sortierung
+  dateOrPeriod: string; // Kombiniertes Feld für Datum oder Zeitraum
   status: 'LAUFEND' | 'BEENDET'; // Status des Projekts
+  type?: 'project' | 'external_milestone'; // Typ hinzufügen
   name: string;
   useCases: UseCaseCategory[];
   technologyConcepts?: TechnologyConcept[]; // Neues Feld für allgemeine Konzepte
   technologies?: string; // Optional
-  insights?: string; // Optional
+  insights?: { summary: string[] }; // Strukturierte Insights als Array von Absätzen
+  shortSummary?: string; // Kurze Zusammenfassung für die Timeline-Ansicht
+  relatedMilestoneIds?: string[]; // IDs von verknüpften externen Meilensteinen
+  imageUrls?: string[]; // URLs zu Bildern für das Projekt
+  relatedLinks?: { label: string; url: string }[]; // Links zu externen Dokumenten/Seiten
 } 
