@@ -24,4 +24,5 @@ export interface Project {
   relatedMilestoneIds?: string[]; // IDs von verknüpften externen Meilensteinen
   imageUrls?: string[]; // URLs zu Bildern für das Projekt
   relatedLinks?: { label: string; url: string }[]; // Links zu externen Dokumenten/Seiten
+  participants?: string[]; // Neues Feld für Beteiligte (optional)
 } 

@@ -60,6 +60,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, onHover, onClick, po
       {project.type !== 'external_milestone' && project.shortSummary && (
         <p className="short-summary">{project.shortSummary}</p>
       )}
+
+      {/* NEU: Beteiligte in der Übersicht anzeigen */}
+      {project.participants && project.participants.length > 0 && (
+        <p style={{ fontSize: '0.8em', color: '#666', marginTop: '5px' }}>
+          Beteiligt: {project.participants.join(', ')}
+        </p>
+      )}
+
       {project.type !== 'external_milestone' && (
         <div className="tags-container">
           {project.useCases.map(useCase => (

@@ -74,6 +74,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, allProjec
         <p><strong>Datum / Zeitraum:</strong> {project.dateOrPeriod}</p>
         {project.type !== 'external_milestone' && <p><strong>Status:</strong> {project.status}</p>}
         
+        {project.participants && project.participants.length > 0 && (
+          <div style={{ marginTop: '10px', marginBottom: '15px' }}>
+            <strong>Beteiligte:</strong>
+            <p style={{ marginTop: '5px' }}>{project.participants.join(', ')}</p>
+          </div>
+        )}
+
         {project.type !== 'external_milestone' && project.useCases.length > 0 && (
           <div style={{ marginBottom: '15px' }}>
             <strong>Use Cases:</strong>

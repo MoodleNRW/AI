@@ -20,7 +20,8 @@
     "imageUrls": ["/src/assets/chat_teacher_setting.png"],
     "relatedLinks": [
       { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=71894996" }
-    ]
+    ],
+    "participants": ["Alexander Mikasch"]
   },
   {
     "id": "slackday-2023-8",
@@ -41,7 +42,8 @@
     },
     "relatedLinks": [
        { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=71894985" }
-    ]
+    ],
+    "participants": []
   },
   {
     "id": "slackday-2023-11",
@@ -50,8 +52,8 @@
     "status": "BEENDET",
     "name": "Let's Build: LLM Moodle Chatbot (OSKI)",
     "useCases": [],
-    "technologyConcepts": ["LMS","RAG","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration"],
-    "technologies": "Implied: Langchain/LangGraph, LLMs",
+    "technologyConcepts": ["LMS","RAG","Document Analysis","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration"],
+    "technologies": "Implied: Langchain, LLMs",
     "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt OSKI.",
     "insights": {
       "summary": [
@@ -62,7 +64,8 @@
     },
     "relatedLinks": [
        { "label": "GitLab Repo", "url": "https://gitlab.it-services.ruhr-uni-bochum.de/ai-development/" }
-    ]
+    ],
+    "participants": []
   },
   {
     "id": "slackday-2023-6",
@@ -88,7 +91,8 @@
       "/src/assets/research_agent_1.png", 
       "/src/assets/research_price.png", 
       "/src/assets/research_token_consumtion.png"
-    ]
+    ],
+    "participants": []
   },
   {
     "id": "milestone-google-dr",
@@ -105,7 +109,8 @@
         "Google stellt die Deep-Research-Funktion als Teil des Gemini-Modells vor. Ziel ist es, Nutzern zu ermöglichen, komplexe Fragen zu stellen, die eine tiefgehende Recherche über mehrere Quellen hinweg erfordern.", 
         "Dies markiert einen wichtigen Schritt hin zu autonomeren KI-Recherche-Agenten. (Quelle: t3n, Nature)"
       ]
-    }
+    },
+    "participants": []
   },
   {
     "id": "live-transcription-coaching-2024",
@@ -123,7 +128,8 @@
         "Die Transkripte werden zerlegt (Chunking) und von einem Sprachmodell (LLM) analysiert, um dem Benutzer Echtzeit-Feedback zu geben.",
         "Dabei wurden verschiedene LLMs (Claude 3, Groq, lokale Modelle) und Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen."
       ]
-    }
+    },
+    "participants": []
   },
   {
     "id": "milestone-openai-dr",
@@ -140,7 +146,8 @@
         "OpenAI veröffentlicht Deep Research als neue, eigenständige Funktion für ChatGPT.",
         "Diese Funktion ermöglicht es der KI, umfassende Recherchen zu komplexen Themen durchzuführen, mehrere Quellen zu analysieren und detaillierte Berichte zu erstellen. (Quellen: OpenAI Blog, The Decoder, Techcrunch)"
       ]
-    }
+    },
+    "participants": []
   },
   {
     "id": "milestone-perplexity-dr",
@@ -157,7 +164,8 @@
         "Perplexity AI, bekannt für seine KI-gestützte Suchmaschine, zieht nach und implementiert ebenfalls eine Deep-Research-Funktion.",
         "Damit können Nutzer komplexe Anfragen stellen, die über einfache Suchergebnisse hinausgehen und eine Synthese von Informationen aus verschiedenen Quellen erfordern. (Quelle: Helicone Blog, Capital)"
       ]
-    }
+    },
+    "participants": []
   },
   {
     "id": "slackday-2024-15",
@@ -175,7 +183,8 @@
         "Ziel ist es, dass diese Agenten zusammenarbeiten, um automatisch einfache Moodle-Plugins zu erstellen (Analyse, Design, Code, Test). Dies soll die Plugin-Entwicklung effizienter machen.",
         "Es wird erwartet, dass die erste Version nur triviale Ergebnisse liefert."
       ]
-    }
+    },
+    "participants": []
   },
   {
     "id": "wiki-system-2025",
@@ -196,6 +205,7 @@
     },
     "relatedLinks": [
        { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=120033721" }
-    ]
+    ],
+    "participants": []
   }
 ] 
