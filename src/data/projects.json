@@ -181,39 +181,45 @@
     "dateOrPeriod": "2024-10-01",
     "status": "BEENDET",
     "name": "PoC Multi-Agent-System für Moodle-Plugins",
-    "useCases": ["Coding Agents", "Workflow Automation", "Tool-based Agents"],
+    "useCases": ["Coding Agents", "Workflow Automation"],
     "technologyConcepts": ["Multi-Agent", "Code Generation", "Plugin Development", "Moodle", "Autonomous Agent"],
-    "technologies": "Python, Langchain/LangGraph/AgentOps, GPT-4/Claude 3.5",
-    "shortSummary": "Laufendes PoC: Entwicklung eines Multi-Agenten-Systems zur automatischen Erstellung einfacher Moodle-Plugins (Analyse, Design, Code, Test).",
+    "technologies": "Python, Langchain/LangGraph, GPT-4/Claude 3.5 Sonnet",
+    "shortSummary": "Entwicklung eines Multi-Agenten-Systems zur automatischen Erstellung einfacher Moodle-Plugins (Analyse, Design, Code, Test).",
     "insights": {
       "summary": [
+        "**Thema:** Konzeption und Entwicklung eines Proof of Concept (PoC) für ein Multi-Agent-System, das in der Lage ist, prototypische Moodle-Plugins in einer neuen Moodle-Instanz automatisch zu erstellen. Dieses System soll demonstrieren, wie intelligente Agenten in der Lage sein könnten, den Entwicklungsprozess von Moodle-Plugins zu automatisieren und dabei die Effizienz und Innovationsfähigkeit in der Bildungssoftwareentwicklung zu steigern.",
+        "**Fragestellung:** Die zentrale Fragestellung des Berichts lautet: Wie kann ein Multi-Agent-System konzipiert und implementiert werden, um automatisch prototypische Moodle-Plugins in einer neuen Moodle-Instanz zu erstellen und welche Herausforderungen und Lernmöglichkeiten ergeben sich dabei?",
+        "**Erläuterung:** Das Projekt zielt darauf ab, ein Konzept zu entwickeln, bei dem verschiedene intelligente Agenten zusammenarbeiten, um den Entwicklungsprozess von Moodle-Plugins zu automatisieren. Jeder Agent übernimmt eine spezifische Rolle, wie Anforderungsanalyse, Design, Code-Generierung und Testen.",
+        "**Technologien:** Python, Langchain/LangGraph, GPT-4/Claude 3.5 Sonnet",
         "Konzeption und Start der Entwicklung eines 'Proof of Concept' (PoC) für ein System aus mehreren KI-Agenten.",
-        "Ziel ist es, dass diese Agenten zusammenarbeiten, um automatisch einfache Moodle-Plugins zu erstellen (Analyse, Design, Code, Test). Dies soll die Plugin-Entwicklung effizienter machen.",
-        "Es wird erwartet, dass die erste Version nur triviale Ergebnisse liefert."
+        "Ziel war es, dass diese Agenten zusammenarbeiten, um automatisch einfache Moodle-Plugins zu erstellen (Analyse, Design, Code, Test). Dies sollte  die Plugin-Prototyp-Entwicklung effizienter machen.",
+        "Es wurde eine erste Version des Prototyps erstellt, die grundlegenden Plugins erstellen konnte. ",
+        "Das Thema wurde jedoch als sehr umfangreich bewertet. Eine Weiterentwicklung über den initialen Ansatz hinaus hätte voraussichtlich mehrere Wochen an Entwicklungszeit erfordert.",
+        "Zudem wurden bald darauf alternative Werkzeuge wie Cursor, Cline und RooCode verfügbar, die analysiert wurden und als vielversprechende Ansätze für KI-unterstützte Code-Generierung eingeschätzt wurden."
       ]
     },
-    "participants": ["Alexander Mikasch","ETH...", "Bastian Schmidt-Kuhl"]
+    "participants": ["Alexander Mikasch"]
   },
   {
     "id": "wiki-system-2025",
     "type": "project",
     "dateOrPeriod": "2025-01-10",
-    "status": "LAUFEND",
+    "status": "Laufend",
     "name": "Selbstlernendes Wiki-System (DokuWiki)",
     "useCases": ["Workflow Automation", "Coding Agents"],
     "technologyConcepts": ["Clustering", "Keyword Extraction", "API Integration", "DokuWiki", "Self-Learning", "Topic Modeling"],
-    "technologies": "DokuWiki XML-RPC, Docker, DBSCAN, OpenAI API, Jina AI?",
-    "shortSummary": "Laufendes Projekt: Entwicklung eines selbstlernenden Wiki-Systems (DokuWiki) mit KI zur autom. Themenidentifikation, Clustering & Strukturierung.",
+    "technologies": "DokuWiki, Docker,Langchain, LangGraph, OpenAI API, Jina AI",
+    "shortSummary": "PoC: Entwicklung eines selbstlernenden Wiki-Systems (DokuWiki) mit KI zur autom. Themenidentifikation, Clustering & Strukturierung.",
     "insights": {
       "summary": [
-        "Entwicklung eines Wiki-Systems (basiert auf DokuWiki), das mithilfe von KI selbstständig lernt, Inhalte zu organisieren.",
+        "Entwicklung eines Wiki-Systems (basiert auf DokuWiki) für die Kooperation mit Moodle an Hochschulen E.V., das mithilfe von KI selbstständig lernt, Inhalte zu organisieren.",
         "Es nutzt KI (Keyword-Extraktion, OpenAI-Themengenerierung, Clustering mit DBSCAN) um automatisch Themen in Wiki-Seiten zu erkennen, zu gruppieren und eine dynamische Struktur aufzubauen.",
-        "Die Anbindung an DokuWiki (Seiten erstellen/ändern) funktioniert. Herausforderungen sind die Skalierbarkeit und die fehlende Dokumentation/Feedback-Logik."
+        "Die Anbindung an DokuWiki (Seiten erstellen/ändern) funktioniert. "
       ]
     },
     "relatedLinks": [
        { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=120033721" }
     ],
-    "participants": []
+    "participants": ["Alexander Mikasch"]
   }
 ] 
