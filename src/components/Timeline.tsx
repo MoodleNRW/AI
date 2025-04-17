@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectItem from './ProjectItem';
 import { Project, UseCaseCategory, TechnologyConcept } from '../types/data';
 import projectsData from '../data/projects.json';
@@ -11,34 +11,65 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick, activeFilters }) => {
-  const projects: Project[] = projectsData as Project[];
+  const [visibleProjects, setVisibleProjects] = useState<Project[]>([]);
 
-  // Projekte nach specificDate sortieren (aufsteigend)
-  const sortedProjects = [...projects].sort((a, b) => {
-    return new Date(a.specificDate).getTime() - new Date(b.specificDate).getTime();
-  });
+  // Sortierfunktion anpassen, um dateOrPeriod zu verwenden
+  const sortProjects = (a: Project, b: Project) => {
+    // Versuche, gültige Daten zu parsen, gib bei ungültigen Formaten einen Fallback-Wert
+    const dateA = new Date(a.dateOrPeriod); 
+    const dateB = new Date(b.dateOrPeriod);
+    const timeA = !isNaN(dateA.getTime()) ? dateA.getTime() : 0; // Fallback bei ungültigem Datum
+    const timeB = !isNaN(dateB.getTime()) ? dateB.getTime() : 0; // Fallback bei ungültigem Datum
 
-  // Filtere zuerst externe Meilensteine heraus
-  const internalProjects = sortedProjects.filter(p => p.type !== 'external_milestone');
+    // Wenn beide Daten ungültig sind oder gleich, keine Änderung der Reihenfolge
+    if (timeA === 0 && timeB === 0) return 0;
+    // Wenn nur A ungültig ist, kommt B zuerst
+    if (timeA === 0) return 1; 
+    // Wenn nur B ungültig ist, kommt A zuerst
+    if (timeB === 0) return -1;
 
-  // Wende dann die aktiven Filter an
-  const filteredProjects = activeFilters.length === 0 
-    ? internalProjects // Wenn keine Filter aktiv sind, zeige alle internen Projekte
-    : internalProjects.filter(project => { // Sonst filtere
-        // Kombiniere Use Cases und Konzepte des Projekts
+    // Ansonsten normaler Datumsvergleich
+    return timeA - timeB;
+  };
+
+  useEffect(() => {
+    // let filteredData = projectsData as Project[]; -> wird const
+    const filteredData = projectsData as Project[];
+  
+    // Projekte nach dateOrPeriod sortieren (aufsteigend)
+    // const sortedProjects = [...filteredData].sort(sortProjects);
+    
+    // Filterung anwenden
+    let filteredProjects = filteredData;
+    if (activeFilters.length > 0) {
+      filteredProjects = filteredData.filter(project => {
         const projectCategories = [
-          ...project.useCases,
+          ...(project.useCases || []),
           ...(project.technologyConcepts || [])
         ];
-        // Prüfe, ob ALLE aktiven Filter in den Projektkategorien enthalten sind
         return activeFilters.every(filter => projectCategories.includes(filter));
       });
+    }
+
+    // Erst filtern, DANN sortieren
+    const sortedAndFilteredProjects = [...filteredProjects].sort(sortProjects);
+
+    // // Filtere zuerst externe Meilensteine heraus -> Logik nicht mehr benötigt?
+    // // Diese Logik scheint durch activeFilters abgedeckt oder nicht mehr relevant
+
+    // // Zeige nur gefilterte Projekte an (oder alle, wenn kein Filter aktiv)
+    // const finalProjectsToShow = activeFilters.length > 0 ? filteredProjects : sortedProjects;
+    // setVisibleProjects(finalProjectsToShow);
+
+    setVisibleProjects(sortedAndFilteredProjects);
+
+  }, [activeFilters]);
 
   return (
     <div className="timeline-container-visual">
-      {filteredProjects.length > 0 ? (
+      {visibleProjects.length > 0 ? (
         // Gefilterte Projekte mappen
-        filteredProjects.map((project, index) => {
+        visibleProjects.map((project, index) => {
           const positionClass = index % 2 === 0 ? 'left' : 'right'; // Abwechselnd links/rechts
           return (
             <ProjectItem 
