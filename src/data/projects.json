@@ -122,16 +122,20 @@
     "status": "BEENDET",
     "name": "Live-Transkription und interaktives Coaching",
     "useCases": ["Voice Agents", "Tool-based Agents"],
-    "technologyConcepts": ["ASR", "Transcription", "Chunking", "Coaching", "Real-time", "Prompt Engineering", "LLM Comparison"],
-    "technologies": "Whisper, LLMs (Claude 3, Groq, Local), Vue.js 3",
-    "shortSummary": "Entwicklung eines Coaching-Tools mit Live-Transkription (Whisper) und Echtzeit-Feedback durch LLMs. Vergleich verschiedener LLMs.",
+    "technologyConcepts": ["ASR", "Transcription", "Real-time", "Prompt Engineering", "LLM Comparison", "Whisper"],
+    "technologies": "Whisper (lokal), LLMs (LLama Local, GPT4 und GPT3.5), Vue.js 3",
+    "shortSummary": "Entwicklung eines Coaching-Tools mit Live-Transkription (Whisper lokal) und Echtzeit-Feedback durch LLMs (lokal/online).",
     "insights": {
       "summary": [
-        "Ein interaktives Coaching-Tool wurde entwickelt, das gesprochene Sprache live mithilfe von Whisper transkribiert.",
-        "Die Transkripte werden zerlegt (Chunking) und von einem Sprachmodell (LLM) analysiert, um dem Benutzer Echtzeit-Feedback zu geben.",
-        "Dabei wurden verschiedene LLMs (Claude 3, Groq, lokale Modelle) und Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen."
+        "Ein interaktives Coaching-Tool wurde entwickelt, das gesprochene Sprache live mithilfe von Whisper (lokal ausgeführt) transkribiert.",
+        "Die Transkripte werden zerlegt (Chunking) und von einem Sprachmodell (LLM) analysiert, um dem Benutzer Echtzeit-Feedback zu geben. Online-Modellen wie GPT4 und GPT3.5 als auch lokale Modelle wie Llama wurden getestet.",
+        "Es wurden verschiedene LLMs und Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen."
       ]
     },
+    "imageUrls": [
+      "/src/assets/live-transcription-screenshot.png", 
+      "/src/assets/speach_to_feedback.png"
+    ],
     "participants": ["Alexander Mikasch", "Bastian Schmidt-Kuhl", "Annika Lambert"]
   },
   {
