@@ -121,19 +121,19 @@
     "dateOrPeriod": "2024-04-01",
     "status": "BEENDET",
     "name": "Live-Transkription und interaktives Coaching",
-    "useCases": ["Voice Agents", "Tool-based Agents"],
+    "useCases": ["Voice Agents"],
     "technologyConcepts": ["ASR", "Transcription", "Real-time", "Prompt Engineering", "LLM Comparison", "Whisper"],
     "technologies": "Whisper (lokal), LLMs (LLama Local, GPT4 und GPT3.5), Vue.js 3",
     "shortSummary": "Entwicklung eines Coaching-Tools mit Live-Transkription (Whisper lokal) und Echtzeit-Feedback durch LLMs (lokal/online).",
     "insights": {
       "summary": [
-        "Ein interaktives Coaching-Tool wurde entwickelt, das gesprochene Sprache live mithilfe von Whisper (lokal ausgeführt) transkribiert.",
-        "Die Transkripte werden zerlegt (Chunking) und von einem Sprachmodell (LLM) analysiert, um dem Benutzer Echtzeit-Feedback zu geben. Online-Modellen wie GPT4 und GPT3.5 als auch lokale Modelle wie Llama wurden getestet.",
-        "Es wurden verschiedene LLMs und Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen."
+        "Im Rahmen eines Selbstqualifizierungsprojekts wurde ein innovatives Coaching-Tool prototypisch entwickelt. Ziel war die Demonstration einer Anwendung, die Live-Feedback ermöglicht, Lern- und Entwicklungsprozesse unterstützt und Benutzer interaktiv durch verschiedene Szenarien führt.",
+        "Das Tool nutzt lokal ausgeführtes Whisper zur direkten Transkription von Sprachnachrichten. Dieser Prototyp wurde auf dem Moodle-Hochschultreffen 2024 in Leipzig vorgestellt, um die Möglichkeiten interaktiver Coaching-Anwendungen aufzuzeigen.",
+        "Für die Analyse der Transkripte und die Generierung von Feedback wurden verschiedene Sprachmodelle evaluiert, darunter Online-Dienste (GPT-4, GPT-3.5 via API) und lokale Modelle (z.B. Llama). Dabei wurden auch unterschiedliche Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen.",
+        "Die Nutzung lokaler Sprachmodelle für die Analyse erfordert eine zusätzliche lokale LLM-Instanz, beispielsweise betrieben mittels LM Studio."
       ]
     },
     "imageUrls": [
-      "/src/assets/live-transcription-screenshot.png", 
       "/src/assets/speach_to_feedback.png"
     ],
     "participants": ["Alexander Mikasch", "Bastian Schmidt-Kuhl", "Annika Lambert"]
