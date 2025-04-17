@@ -63,7 +63,7 @@
 .timeline-item {
   position: relative;
   width: calc(50% - 40px); /* Breite der Items, mit Abstand zur Mitte */
-  margin-bottom: 50px;
+  margin-bottom: 1rem;
   padding: 20px; /* Mehr Innenabstand */
   background-color: #fff; /* Hintergrund für Items */
   border: 1px solid #eee;

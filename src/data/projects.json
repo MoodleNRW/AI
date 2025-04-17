@@ -40,10 +40,11 @@
         "Das Projekt diente dem Kompetenzaufbau im Bereich RAG."
       ]
     },
+    "imageUrls": ["/src/assets/vault_rag.png"],
     "relatedLinks": [
        { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=71894985" }
     ],
-    "participants": []
+    "participants": ["Alexander Mikasch"]
   },
   {
     "id": "slackday-2023-11",
@@ -52,20 +53,22 @@
     "status": "BEENDET",
     "name": "Let's Build: LLM Moodle Chatbot (OSKI)",
     "useCases": [],
-    "technologyConcepts": ["LMS","RAG","Document Analysis","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration"],
-    "technologies": "Implied: Langchain, LLMs",
-    "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt OSKI.",
+    "technologyConcepts": ["LMS","RAG","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration", "Ilias Integration", "Llama 2"],
+    "technologies": "Langchain, LLMs (Llama 2)",
+    "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle/Ilias-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt OSKI.",
     "insights": {
       "summary": [
-        "Ein Prototyp für einen Chatbot wurde entwickelt, der auf Basis von Kursinhalten in Moodle Fragen beantworten kann (RAG).",
-        "Dieser wurde mit verschiedenen Technologien (vermutlich Langchain/LangGraph und LLMs) erstellt und erfolgreich bei mehreren Veranstaltungen vorgestellt.",
-        "Das positive Feedback führte zur Entstehung des Projekts OSKI."
+        "Ein Prototyp für einen Chatbot wurde entwickelt, der auf Basis von Kursinhalten in Moodle Fragen beantworten kann. Hierfür wurde ein simpler RAG-Ansatz (Retrieval Augmented Generation) gewählt, der auf lokaler Infrastruktur mit lokalen Modellen (zuerst Llama 2, später Llama 3) basiert.",
+        "Dieser Prototyp wurde erfolgreich bei mehreren Veranstaltungen vorgestellt.",
+        "Das positive Feedback führte zur Entstehung des Projekts OSKI.",
+        "Das primäre Ziel dieses initialen Prototyps war ein Machbarkeitsbeweis (Proof of Concept)."
       ]
     },
+    "imageUrls": ["/src/assets/oski_rag.png"],
     "relatedLinks": [
        { "label": "GitLab Repo", "url": "https://gitlab.it-services.ruhr-uni-bochum.de/ai-development/" }
     ],
-    "participants": []
+    "participants": ["Tim Trappen", "Alexander Mikasch", "Bastian Schmidt-Kuhl", "Mathias Buttgereit"]
   },
   {
     "id": "slackday-2023-6",
@@ -73,8 +76,8 @@
     "dateOrPeriod": "2023-12-18",
     "status": "BEENDET",
     "name": "Research Agent (Experiment)",
-    "useCases": ["Tool-based Agents", "Agentic RAG"],
-    "technologyConcepts": ["Multi-Agent", "Web Scraping", "Summarization", "Search", "Autonomous Agent", "Web Navigation", "Cost Analysis"],
+    "useCases": ["Tool-based Agents"],
+    "technologyConcepts": ["Multi-Agent", "Web Scraping", "Summarization", "Search", "Autonomous Agent", "Web Navigation", "Cost Analysis", "Research"],
     "technologies": "GPT 3.5 API, Implied: Agent Framework",
     "shortSummary": "Experimenteller autonomer Research Agent (Suche, Navigation, Analyse). Liefert Bspw. OER-Zusammenfassung. Hoher Token-Verbrauch/Kosten festgestellt.",
     "insights": {
@@ -92,7 +95,7 @@
       "/src/assets/research_price.png", 
       "/src/assets/research_token_consumtion.png"
     ],
-    "participants": []
+    "participants": ["Alexander Mikasch"]
   },
   {
     "id": "milestone-google-dr",
@@ -129,7 +132,7 @@
         "Dabei wurden verschiedene LLMs (Claude 3, Groq, lokale Modelle) und Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen."
       ]
     },
-    "participants": []
+    "participants": ["Alexander Mikasch", "Bastian Schmidt-Kuhl", "Annika Lambert"]
   },
   {
     "id": "milestone-openai-dr",
@@ -171,7 +174,7 @@
     "id": "slackday-2024-15",
     "type": "project",
     "dateOrPeriod": "2024-10-01",
-    "status": "LAUFEND",
+    "status": "BEENDET",
     "name": "PoC Multi-Agent-System für Moodle-Plugins",
     "useCases": ["Coding Agents", "Workflow Automation", "Tool-based Agents"],
     "technologyConcepts": ["Multi-Agent", "Code Generation", "Plugin Development", "Moodle", "Autonomous Agent"],
@@ -184,7 +187,7 @@
         "Es wird erwartet, dass die erste Version nur triviale Ergebnisse liefert."
       ]
     },
-    "participants": []
+    "participants": ["Alexander Mikasch","ETH...", "Bastian Schmidt-Kuhl"]
   },
   {
     "id": "wiki-system-2025",
