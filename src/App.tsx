@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Timeline from './components/Timeline';
 import UseCaseCategoryChart from './components/UseCaseCategoryChart';
@@ -6,6 +7,47 @@ import ProjectModal from './components/ProjectModal';
 import { Project, UseCaseCategory, TechnologyConcept } from './types/data';
 import projectsData from './data/projects.json';
 import logo from './assets/moodle-nrw_Kooperationsvorhaben_Logo_RGB.png';
+import Footer from './components/Footer';
+import ImprintPage from './pages/ImprintPage';
+import PrivacyPage from './pages/PrivacyPage';
+
+const MainLayout: React.FC<{ 
+  onProjectHover: (categories: (UseCaseCategory | TechnologyConcept)[]) => void;
+  onProjectClick: (project: Project) => void;
+  selectedProject: Project | null;
+  onCloseModal: () => void;
+  allProjects: Project[];
+  activeFilters: (UseCaseCategory | TechnologyConcept)[];
+  onFilterChange: (filter: UseCaseCategory | TechnologyConcept) => void;
+  hoveredCategories: (UseCaseCategory | TechnologyConcept)[];
+}> = ({ 
+  onProjectHover, onProjectClick, selectedProject, onCloseModal, allProjects, 
+  activeFilters, onFilterChange, hoveredCategories 
+}) => {
+  return (
+    <div className="app-container" style={{ display: 'flex', flexDirection: 'row', gap: '20px', padding: '0 20px 20px 20px'}}>
+      <div className="timeline-section" style={{ flex: 2 }}>
+        <Timeline 
+          onProjectHover={onProjectHover} 
+          onProjectClick={onProjectClick} 
+          activeFilters={activeFilters}
+        />
+      </div>
+      <div className="legend-section" style={{ flex: 1 }}>
+        <UseCaseCategoryChart 
+          highlightedCategories={hoveredCategories} 
+          activeFilters={activeFilters} 
+          onFilterChange={onFilterChange} 
+        />
+      </div>
+      <ProjectModal 
+        project={selectedProject} 
+        onClose={onCloseModal} 
+        allProjects={allProjects}
+      />
+    </div>
+  );
+};
 
 function App() {
   const [hoveredCategories, setHoveredCategories] = useState<(UseCaseCategory | TechnologyConcept)[]>([]);
@@ -35,7 +77,7 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter basename="/AI/">
       <header style={{
         display: 'flex',
         flexDirection: 'column',
@@ -62,29 +104,25 @@ function App() {
         </h1>
       </header>
 
-      <div className="app-container" style={{ display: 'flex', flexDirection: 'row', gap: '20px', padding: '0 20px 20px 20px'}}>
-        <div className="timeline-section" style={{ flex: 2 }}>
-          <Timeline 
-            onProjectHover={handleProjectHover} 
-            onProjectClick={handleProjectClick} 
+      <Routes>
+        <Route path="/" element={ 
+          <MainLayout 
+            onProjectHover={handleProjectHover}
+            onProjectClick={handleProjectClick}
+            selectedProject={selectedProject}
+            onCloseModal={handleCloseModal}
+            allProjects={allProjects}
             activeFilters={activeFilters}
-          />
-        </div>
-        <div className="legend-section" style={{ flex: 1 }}>
-          <UseCaseCategoryChart 
-            highlightedCategories={hoveredCategories} 
-            activeFilters={activeFilters} 
-            onFilterChange={handleFilterChange} 
-          />
-        </div>
+            onFilterChange={handleFilterChange}
+            hoveredCategories={hoveredCategories}
+          /> 
+        } />
+        <Route path="/impressum" element={<ImprintPage />} />
+        <Route path="/datenschutz" element={<PrivacyPage />} />
+      </Routes>
 
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={handleCloseModal} 
-          allProjects={allProjects}
-        />
-      </div>
-    </>
+      <Footer />
+    </BrowserRouter>
   )
 }
 
