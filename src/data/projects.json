@@ -130,7 +130,8 @@
         "Im Rahmen eines Selbstqualifizierungsprojekts wurde ein innovatives Coaching-Tool prototypisch entwickelt. Ziel war die Demonstration einer Anwendung, die Live-Feedback ermöglicht, Lern- und Entwicklungsprozesse unterstützt und Benutzer interaktiv durch verschiedene Szenarien führt.",
         "Das Tool nutzt lokal ausgeführtes Whisper zur direkten Transkription von Sprachnachrichten. Dieser Prototyp wurde auf dem Moodle-Hochschultreffen 2024 in Leipzig vorgestellt, um die Möglichkeiten interaktiver Coaching-Anwendungen aufzuzeigen.",
         "Für die Analyse der Transkripte und die Generierung von Feedback wurden verschiedene Sprachmodelle evaluiert, darunter Online-Dienste (GPT-4, GPT-3.5 via API) und lokale Modelle (z.B. Llama). Dabei wurden auch unterschiedliche Prompting-Techniken (0-Shot, Few-Shot, CoT) verglichen.",
-        "Die Nutzung lokaler Sprachmodelle für die Analyse erfordert eine zusätzliche lokale LLM-Instanz, beispielsweise betrieben mittels LM Studio."
+        "Die Nutzung lokaler Sprachmodelle für die Analyse erfordert eine zusätzliche lokale LLM-Instanz, beispielsweise betrieben mittels LM Studio.",
+        "**Mögliche Anwendungsszenarien in LMS:**\n*   Echtzeit-Feedback zu mündlichen Präsentationen oder Ausspracheübungen.\n*   Automatische Transkription von Audio-/Video-Beiträgen in Foren oder Aufgaben.\n*   Interaktive Sprachlerntools mit sofortiger Rückmeldung.\n*   Unterstützung bei der Barrierefreiheit durch Live-Untertitelung.\n*   Entwicklung spezialisierter Coaching-Bots für bestimmte Lernziele oder Fähigkeiten."
       ]
     },
     "imageUrls": [
