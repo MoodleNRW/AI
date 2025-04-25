@@ -30,7 +30,7 @@
     "status": "BEENDET",
     "name": "Vault-ai / AI-Powered Document Analysis",
     "useCases": [],
-    "technologyConcepts": ["RAG", "Document Analysis", "Pinecone", "Vector Database"],
+    "technologyConcepts": ["RAG", "Document Analysis", "Pinecone", "Vector Database","Research"],
     "technologies": "Pinecone, OpenAI (GPT 3.5)",
     "shortSummary": "Aufsetzen eines RAG-Systems mit Pinecone & GPT 3.5 zur Dokumentenanalyse. Funktionierte, aber Probleme mit Tabellen. Kompetenzaufbau.",
     "insights": {
@@ -97,24 +97,7 @@
     ],
     "participants": ["Alexander Mikasch"]
   },
-  {
-    "id": "milestone-google-dr",
-    "type": "external_milestone",
-    "dateOrPeriod": "2024-12-01",
-    "status": "BEENDET",
-    "name": "Google stellt Deep Research vor",
-    "useCases": [],
-    "technologyConcepts": ["Autonomous Agent", "Search", "Reasoning"],
-    "technologies": "Google Gemini",
-    "shortSummary": "Google integriert als erster großer Anbieter eine 'Deep Research'-Funktion in sein Gemini-Modell für komplexe Recherchen.",
-    "insights": {
-      "summary": [
-        "Google stellt die Deep-Research-Funktion als Teil des Gemini-Modells vor. Ziel ist es, Nutzern zu ermöglichen, komplexe Fragen zu stellen, die eine tiefgehende Recherche über mehrere Quellen hinweg erfordern.", 
-        "Dies markiert einen wichtigen Schritt hin zu autonomeren KI-Recherche-Agenten. (Quelle: t3n, Nature)"
-      ]
-    },
-    "participants": []
-  },
+
   {
     "id": "live-transcription-coaching-2024",
     "type": "project",
@@ -140,42 +123,6 @@
     "participants": ["Alexander Mikasch", "Bastian Schmidt-Kuhl", "Annika Lambert"]
   },
   {
-    "id": "milestone-openai-dr",
-    "type": "external_milestone",
-    "dateOrPeriod": "2025-02-02",
-    "status": "BEENDET",
-    "name": "OpenAI veröffentlicht Deep Research",
-    "useCases": [],
-    "technologyConcepts": ["Autonomous Agent", "Search", "Reasoning"],
-    "technologies": "ChatGPT (implied)",
-    "shortSummary": "OpenAI führt 'Deep Research' als eigenständige Agenten-Funktion in ChatGPT ein, um komplexe Recherchen durchzuführen.",
-    "insights": {
-      "summary": [
-        "OpenAI veröffentlicht Deep Research als neue, eigenständige Funktion für ChatGPT.",
-        "Diese Funktion ermöglicht es der KI, umfassende Recherchen zu komplexen Themen durchzuführen, mehrere Quellen zu analysieren und detaillierte Berichte zu erstellen. (Quellen: OpenAI Blog, The Decoder, Techcrunch)"
-      ]
-    },
-    "participants": []
-  },
-  {
-    "id": "milestone-perplexity-dr",
-    "type": "external_milestone",
-    "dateOrPeriod": "2025-02-28",
-    "status": "BEENDET",
-    "name": "Perplexity AI führt Deep Research ein",
-    "useCases": [],
-    "technologyConcepts": ["Autonomous Agent", "Search", "Reasoning"],
-    "technologies": "Perplexity AI",
-    "shortSummary": "Kurz nach OpenAI stellt auch Perplexity AI eine eigene Deep-Research-Funktion für seine KI-Suchmaschine vor.",
-    "insights": {
-      "summary": [
-        "Perplexity AI, bekannt für seine KI-gestützte Suchmaschine, zieht nach und implementiert ebenfalls eine Deep-Research-Funktion.",
-        "Damit können Nutzer komplexe Anfragen stellen, die über einfache Suchergebnisse hinausgehen und eine Synthese von Informationen aus verschiedenen Quellen erfordern. (Quelle: Helicone Blog, Capital)"
-      ]
-    },
-    "participants": []
-  },
-  {
     "id": "slackday-2024-15",
     "type": "project",
     "dateOrPeriod": "2024-10-01",
@@ -187,9 +134,9 @@
     "shortSummary": "Entwicklung eines Multi-Agenten-Systems zur automatischen Erstellung einfacher Moodle-Plugins (Analyse, Design, Code, Test).",
     "insights": {
       "summary": [
-        "**Thema:** Konzeption und Entwicklung eines Proof of Concept (PoC) für ein Multi-Agent-System, das in der Lage ist, prototypische Moodle-Plugins in einer neuen Moodle-Instanz automatisch zu erstellen. Dieses System soll demonstrieren, wie intelligente Agenten in der Lage sein könnten, den Entwicklungsprozess von Moodle-Plugins zu automatisieren und dabei die Effizienz und Innovationsfähigkeit in der Bildungssoftwareentwicklung zu steigern.",
+        "**Thema:** Konzeption und Entwicklung eines Proof of Concept (PoC) für ein Multi-Agent-System, das in der Lage ist, prototypische Moodle-Plugins in einer neuen Moodle-Instanz automatisch zu erstellen. Dieses System soll demonstrieren, wie intelligente Agenten in Zukunft inder Lage sein könnten, den Entwicklungsprozess von Moodle-Plugins zu beschleunigen und dabei die Effizienz und Innovationsfähigkeit in der Bildungssoftwareentwicklung zu steigern.",
         "**Fragestellung:** Die zentrale Fragestellung des Berichts lautet: Wie kann ein Multi-Agent-System konzipiert und implementiert werden, um automatisch prototypische Moodle-Plugins in einer neuen Moodle-Instanz zu erstellen und welche Herausforderungen und Lernmöglichkeiten ergeben sich dabei?",
-        "**Erläuterung:** Das Projekt zielt darauf ab, ein Konzept zu entwickeln, bei dem verschiedene intelligente Agenten zusammenarbeiten, um den Entwicklungsprozess von Moodle-Plugins zu automatisieren. Jeder Agent übernimmt eine spezifische Rolle, wie Anforderungsanalyse, Design, Code-Generierung und Testen.",
+        "**Erläuterung:** Das Eintages-Projekt zielt darauf ab, ein Konzept zu entwickeln, bei dem verschiedene intelligente Agenten zusammenarbeiten, um den Entwicklungsprozess von Moodle-Plugins zu automatisieren. Jeder Agent übernimmt eine spezifische Rolle, wie Anforderungsanalyse, Design, Code-Generierung und Testen.",
         "**Technologien:** Python, Langchain/LangGraph, GPT-4/Claude 3.5 Sonnet",
         "Konzeption und Start der Entwicklung eines 'Proof of Concept' (PoC) für ein System aus mehreren KI-Agenten.",
         "Ziel war es, dass diese Agenten zusammenarbeiten, um automatisch einfache Moodle-Plugins zu erstellen (Analyse, Design, Code, Test). Dies sollte  die Plugin-Prototyp-Entwicklung effizienter machen.",
@@ -221,5 +168,33 @@
        { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=120033721" }
     ],
     "participants": ["Alexander Mikasch"]
+  },
+  {
+    "id": "ai-usecase-lab-sprint-2025",
+    "type": "event-series",
+    "dateOrPeriod": "Geplant 2025",
+    "status": "GEPLANT",
+    "name": "AI Use Case Lab & Sprint 2025",
+    "useCases": ["Policy Creation", "Feature Labs", "Quiz Generation", "Auto Assessment", "Plugin Development", "RAG Support Bot", "Prototyping"],
+    "technologyConcepts": ["KI in der Lehre", "Moodle Plugins", "Prototyping", "KI-Ethik & Recht", "RAG", "Assessment"],
+    "technologies": "Moodle Sandbox, KI-Tools (noch offen)",
+    "shortSummary": "Geplante Workshop- und Sprint-Reihe zur Entwicklung und Erprobung von KI-Anwendungsfällen im Moodle-Umfeld an der RUB.",
+    "insights": {
+      "summary": [
+        "Eine Veranstaltungsreihe bestehend aus Workshops, Labs und einem abschließenden Sprint, um KI-Anwendungsfälle für Moodle zu entwickeln und zu testen.",
+        "**Geplante Abschnitte:**",
+        "  - Abschnitt 1: Recht Beauftragung (Policy-Blueprint, FAQ, Dokumentensammlung)",
+        "  - Abschnitt 2: Core-Features-Lab (Demo-Setup, Testplan, Feedback)",
+        "  - Abschnitt 3: AI-Quiz & Auto-Assessment (Demo, Testplan, Feedback)",
+        "  - Abschnitt 4–6: Plugin-Demos & Testabschnitten (3x Demo, Testplan, Feedback)",
+        "  - Abschnitt 7: Sprint-Kick-off „Ideas → Prototype“ (Team-Briefings, Prototypen)",
+        "  - Abschnitt 8: RAG Support Bot für Moodle (Demo, Anleitung, Feedback)",
+        "  - Abschnitt 9: Evaluation & Wrap-up (Abschlussbericht, Roadmap)",
+        "**Zusätzlich:** Wöchentliche Office Hours (Q&A, Support)"
+      ]
+    },
+    "imageUrls": [],
+    "relatedLinks": [],
+    "participants": ["Moodle.NRW-Community", "Lena Nedwed", "Alexander Mikasch"]
   }
 ] 

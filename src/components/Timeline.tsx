@@ -52,7 +52,7 @@ const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick, act
     }
 
     // Erst filtern, DANN sortieren
-    const sortedAndFilteredProjects = [...filteredProjects].sort(sortProjects);
+    const sortedAndFilteredProjects = [...filteredProjects]; //.sort(sortProjects);
 
     // // Filtere zuerst externe Meilensteine heraus -> Logik nicht mehr benötigt?
     // // Diese Logik scheint durch activeFilters abgedeckt oder nicht mehr relevant
