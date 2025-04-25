@@ -102,6 +102,15 @@ function App() {
         }}>
           Einblicke in unsere Arbeiten um Generative KI: Prototypen & Researches
         </h1>
+        <p style={{
+          fontSize: '0.9rem',
+          marginTop: '5px',
+          marginBottom: '15px',
+          color: '#555',
+          fontFamily: 'sans-serif'
+        }}>
+          Kontaktieren Sie uns bei Fragen, Kooperation etc. gerne unter <a href="mailto:kontakt@moodlenrw.de" style={{color: '#003366'}}>kontakt@moodlenrw.de</a>
+        </p>
       </header>
 
       <Routes>

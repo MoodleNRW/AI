@@ -27,6 +27,8 @@ const Footer: React.FC = () => {
         <Link to="/impressum" style={linkStyle}>Impressum</Link>
         |
         <Link to="/datenschutz" style={linkStyle}>Datenschutz</Link>
+        |
+        <a href="https://moodlenrw.de/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Weitere Informationen</a>
       </p>
     </footer>
   );

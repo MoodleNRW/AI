@@ -18,7 +18,6 @@ const conceptColors: Record<TechnologyConcept, string> = {
   'TTS': '#f4a261',
   'Code Generation': '#e76f51',
   'Chatbot': '#2a9d8f',
-  'API Integration': '#588157', // Geändert zu einem lesbareren Grün
   'Classification': '#a8dadc',
   'NLP': '#457b9d',
   'Multi-Agent': '#6a4c93', // Geändert zu einem dunkleren Lila

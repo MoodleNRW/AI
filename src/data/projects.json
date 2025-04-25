@@ -6,7 +6,7 @@
     "status": "BEENDET",
     "name": "ChatGPT und co : Anwendungsbereich im LMS",
     "useCases": [],
-    "technologyConcepts": ["LMS", "API Integration", "Research", "Moodle Integration"],
+    "technologyConcepts": ["LMS", "Research", "Moodle Integration"],
     "technologies": "OpenAI API",
     "shortSummary": "Untersuchung von ChatGPT im LMS Moodle: Funktionsumfang, API, Rechtliches, Anwendungsszenarien. Einfacher Prototyp zur API-Integration.",
     "insights": {
@@ -105,7 +105,7 @@
     "status": "BEENDET",
     "name": "Live-Transkription und interaktives Coaching",
     "useCases": ["Voice Agents"],
-    "technologyConcepts": ["ASR", "Transcription", "Real-time", "Prompt Engineering", "LLM Comparison", "Whisper"],
+    "technologyConcepts": ["ASR", "Transcription", "Real-time", "Prompt Engineering", "LLM Comparison", "Whisper","Moodle Integration"],
     "technologies": "Whisper (lokal), LLMs (LLama Local, GPT4 und GPT3.5), Vue.js 3",
     "shortSummary": "Entwicklung eines Coaching-Tools mit Live-Transkription (Whisper lokal) und Echtzeit-Feedback durch LLMs (lokal/online).",
     "insights": {
@@ -125,11 +125,11 @@
   {
     "id": "slackday-2024-15",
     "type": "project",
-    "dateOrPeriod": "2024-10-01",
+    "dateOrPeriod": "2024-06-28; 2024-07-24",
     "status": "BEENDET",
     "name": "PoC Multi-Agent-System für Moodle-Plugins",
     "useCases": ["Coding Agents", "Workflow Automation"],
-    "technologyConcepts": ["Multi-Agent", "Code Generation", "Plugin Development", "Moodle", "Autonomous Agent"],
+    "technologyConcepts": ["Multi-Agent", "Code Generation", "Plugin Development", "Moodle", "Autonomous Agent","Research"],
     "technologies": "Python, Langchain/LangGraph, GPT-4/Claude 3.5 Sonnet",
     "shortSummary": "Entwicklung eines Multi-Agenten-Systems zur automatischen Erstellung einfacher Moodle-Plugins (Analyse, Design, Code, Test).",
     "insights": {
@@ -148,13 +148,91 @@
     "participants": ["Alexander Mikasch"]
   },
   {
+    "id": "agentic-mesh-research-2024",
+    "type": "project",
+    "dateOrPeriod": "2024-12-13",
+    "status": "BEENDET",
+    "name": "Agentic Mesh und sonstige Autonome Dynamisches Multi-Agenten-System und Protokolle",
+    "useCases": [
+      "Automated Course Development", 
+      "Personalized Learning Paths", 
+      "Adaptive Teaching", 
+      "Intelligent Tutoring", 
+      "Automated Feedback", 
+      "Automated Assessment", 
+      "Resource Recommendation", 
+      "OER Integration", 
+      "Data-driven Quality Control", 
+      "Administrative Automation", 
+      "Research Support", 
+      "Strategic Steering"
+    ],
+    "technologyConcepts": [
+      "Multi-Agent Systems", 
+      "Agentic Mesh", 
+      "Agent Twin", 
+      "Event-Driven Architecture (EDA)", 
+      "Semantic Knowledge Graph", 
+      "Autonomous Agent", 
+      "Research"
+    ],
+    "technologies": "LLMs, Wissensgraphen-Technologien, Kommunikationsprotokolle (HTTP/REST), ggf. Kafka",
+    "shortSummary": "Ein Tages Research zu Agentic Mesh, Agent Twin, EDA und dynamischen Multi-Agenten-Systemen für autonome Aufgabenbearbeitung in Moodle via HTTP/REST, semantischem Graphen & LLMs. Beleuchtet Moodle-Anwendungsfälle und technische Konzepte wie Agenten-Registrierung und Task-Management.",
+    "insights": {
+      "summary": [
+        "**Prozessübersicht: Dynamisches Multi-Agenten-System in Moodle:**",
+        "Es wurde unterrsucht, wie ein erweiterbares Multi-Agenten-System per HTTP/REST, semantischem Wissensgraph und LLM-Integration in Moodle-Plugins Aufgaben autonom bearbeitet und neue Agenten on-the-fly integriert.",
+        "Agenten-Registrierung: Jeder Specialized Agent meldet sich per POST /agents/register beim Registry Service mit Fähigkeiten und Endpunkt-URL an.",
+        "Aufgabe einreichen: Nutzer senden über das React-Plugin in Moodle ihre Anfrage (z. B. „Quiz erstellen“) per REST/JSON an den Task Manager.",
+        "Intent & Kontext: Task Manager ruft LLM-Agent (Intent-Parsing) und Wissens-Agent (SPARQL-Query) ab, um die Anfrage zu strukturieren und mit Domänenwissen anzureichern.",
+        "Subtask-Dispatch: Task Manager erhält aktuelle Agentenliste via GET /agents/list und verteilt Subtasks als JSON an passende Specialized Agents.",
+        "Wissens-Abruf: Specialized Agents holen bei Bedarf Fakten per JSON-Query vom Wissens-Agent.",
+        "Ergebnisrücklauf: Jeder Agent liefert sein Teilergebnis als JSON an den Task Manager zurück.",
+        "Aggregation & Rückgabe: Task Manager fasst alle Teilergebnisse zusammen und sendet das finale JSON an das React-Frontend, das es in Moodle darstellt.",
+        "**Research Report: Agentic Mesh, Agent Twin und Event-Driven Architekturen:**",
+        "In der digitalen Transformation bieten Agentic Mesh, Agent Twin und event-driven Architekturen (EDA) ein zukunftsweisendes Fundament für autonome, skalierbare und resiliente Systeme. Das Agentic Mesh ermöglicht eine dezentrale Koordination spezialisierter KI-Agenten, die in Echtzeit zusammenarbeiten. Durch die Integration von Event-Driven Design (z. B. via Apache Kafka) reagieren diese Agenten dynamisch auf Ereignisse und passen Workflows adaptiv an.",
+        "Agent Twins fungieren als digitale Replikate realer Entitäten und optimieren Entscheidungen durch Simulationen und Datenanalysen.",
+        "**Definition: Agentic Mesh:**",
+        "Bezeichnet ein dezentrales Ökosystem aus KI-Agenten, die sich registrieren, kooperieren und gemeinsam komplexe Aufgaben lösen.",
+        "**Kernkomponenten:**",
+        "Registry – Verzeichnis aller Agenten mit ihren Fähigkeiten und Reputation.",
+        "Marketplace – Marktplatz, auf dem Teilaufgaben ausgeschrieben und Agenten zugewiesen werden.",
+        "Trust & Safety – Mechanismen zur Prüfung von Zuverlässigkeit, Sicherheit und ethischer Konformität.",
+        "Kommunikationssystem – APIs und Protokolle als „Mesh“-Netzwerk für direkten Datenaustausch zwischen Agenten.",
+        "**Ablauf:**",
+        "Aufgabe wird analysiert und in Teilaufgaben zerlegt.",
+        "Passende Agenten werden über Registry und Marketplace gefunden und geprüft.",
+        "Agenten arbeiten parallel über das Kommunikationssystem zusammen.",
+        "Ergebnisse werden aggregiert, geliefert und fließen als Feedback in die Registry für kontinuierliches Lernen.",
+        "**Vorteile:**",
+        "Skalierbarkeit: Neue Agenten lassen sich nahtlos integrieren.",
+        "Fehlertoleranz: Bei Ausfall springt ein anderer Agent ein.",
+        "Effizienz: Spezialisierte Agenten arbeiten parallel und adaptiv.",
+        "**Anwendungsfelder des Agentic Mesh in und um Moodle im Kontext der Universitätsstrategie:**",
+        "Automatisierte Kursentwicklung & -pflege: Agenten können Lerninhalte aus OER-Datenbanken (z. B. OERSI, Sciebo) abrufen, strukturieren und zu Kursmodulen zusammenfügen. So lassen sich neue Kurse deutlich schneller erstellen und laufend aktualisieren.",
+        "Personalisierte Lernpfade & Adaptive Lehre: Auf Basis von Lernhistorie, Leistung und Interessen generieren spezialisierte Agenten adaptive Empfehlungspfade für Studierende. Sie schlagen individuelle Übungen vor, passen Schwierigkeit an und empfehlen Zusatzmaterial.",
+        "Intelligente Tutoren & Assistenz: Language-Agents übernehmen Chat- oder Foren-Support, beantworten in natürlicher Sprache Fragen zu Kursinhalten, Terminplänen und Prüfungsregeln – rund um die Uhr und entlasten Lehrende.",
+        "Automatisiertes Feedback & Assessment: Behavior-Agents analysieren eingereichte Aufgaben (Programmcode, Essays) und geben automatisiertes Feedback zu Stil, inhaltlicher Korrektheit oder Code-Qualität. Prüfungsaufgaben lassen sich so effizient vorbewerten.",
+        "Ressourcen-Empfehlung & OER-Integration: Marketplace-Agenten durchsuchen Bibliotheks-, Repositoriums- und OER-Bestände, vergleichen Lizenzen, und kuratieren passende Literatur oder Medien direkt im Moodle-Kurs.",
+        "Datengetriebene Qualitäts- und Erfolgskontrolle: Predictive-Analytics-Agenten überwachen Lernstatistiken, identifizieren Abbruch- oder Risikogruppen frühzeitig und liefern Dashboards für Hochschulleitung und Qualitätsmanagement.",
+        "Verwaltungs- und Organisationsprozesse: Agenten können Terminkoordination (Raum-, Ressourcenplanung), Anmeldeprozesse oder Prüfungsverwaltung automatisieren, indem sie E-Mails versenden, Deadlines überwachen und Eskalationen auslösen.",
+        "Forschungsunterstützung & Wissensmanagement: Spezialisierte Agenten unterstützen Wissenschaftler bei Literatursuche, Datenanalyse und Berichtsgenerierung; sie fassen relevante Papers zusammen und bereiten Ergebnisse für interne Strategie-Meetings auf.",
+        "Strategische Steuerung & Entscheidungshilfe: Ein Agentic-Mesh-Cockpit bietet Hochschulleitungen Echtzeit-Einblicke in KPIs (Studierendenzahlen, Kursbewertungen, Ressourcenauslastung) und simuliert strategische Szenarien (z. B. Kapazitätserweiterung, Budgetallokation).",
+        "**Hinweis:** Zu den Research gibt es noch diverse Skizzen und Ausarbeitungen. Hier jedoch nur eine Zusammenfassung, bei Interesse gerne melden."
+      ]
+    },
+    "imageUrls": ["/src/assets/agentic_architektur.png","/src/assets/flow_agentic_mesh.png"],
+    "relatedLinks": [],
+    "participants": ["Alexander Mikasch"]
+  },
+  {
     "id": "wiki-system-2025",
     "type": "project",
     "dateOrPeriod": "2025-01-10",
-    "status": "Laufend",
+    "status": "BEENDET",
     "name": "Selbstlernendes Wiki-System (DokuWiki)",
-    "useCases": ["Workflow Automation", "Coding Agents"],
-    "technologyConcepts": ["Clustering", "Keyword Extraction", "API Integration", "DokuWiki", "Self-Learning", "Topic Modeling"],
+    "useCases": ["Workflow Automation"],
+    "technologyConcepts": ["Clustering", "Keyword Extraction", "DokuWiki", "Self-Learning", "Topic Modeling"],
     "technologies": "DokuWiki, Docker,Langchain, LangGraph, OpenAI API, Jina AI",
     "shortSummary": "PoC: Entwicklung eines selbstlernenden Wiki-Systems (DokuWiki) mit KI zur autom. Themenidentifikation, Clustering & Strukturierung.",
     "insights": {
@@ -168,33 +246,5 @@
        { "label": "Confluence Doku", "url": "https://confluence.ruhr-uni-bochum.de/pages/viewpage.action?pageId=120033721" }
     ],
     "participants": ["Alexander Mikasch"]
-  },
-  {
-    "id": "ai-usecase-lab-sprint-2025",
-    "type": "event-series",
-    "dateOrPeriod": "Geplant 2025",
-    "status": "GEPLANT",
-    "name": "AI Use Case Lab & Sprint 2025",
-    "useCases": ["Policy Creation", "Feature Labs", "Quiz Generation", "Auto Assessment", "Plugin Development", "RAG Support Bot", "Prototyping"],
-    "technologyConcepts": ["KI in der Lehre", "Moodle Plugins", "Prototyping", "KI-Ethik & Recht", "RAG", "Assessment"],
-    "technologies": "Moodle Sandbox, KI-Tools (noch offen)",
-    "shortSummary": "Geplante Workshop- und Sprint-Reihe zur Entwicklung und Erprobung von KI-Anwendungsfällen im Moodle-Umfeld an der RUB.",
-    "insights": {
-      "summary": [
-        "Eine Veranstaltungsreihe bestehend aus Workshops, Labs und einem abschließenden Sprint, um KI-Anwendungsfälle für Moodle zu entwickeln und zu testen.",
-        "**Geplante Abschnitte:**",
-        "  - Abschnitt 1: Recht Beauftragung (Policy-Blueprint, FAQ, Dokumentensammlung)",
-        "  - Abschnitt 2: Core-Features-Lab (Demo-Setup, Testplan, Feedback)",
-        "  - Abschnitt 3: AI-Quiz & Auto-Assessment (Demo, Testplan, Feedback)",
-        "  - Abschnitt 4–6: Plugin-Demos & Testabschnitten (3x Demo, Testplan, Feedback)",
-        "  - Abschnitt 7: Sprint-Kick-off „Ideas → Prototype“ (Team-Briefings, Prototypen)",
-        "  - Abschnitt 8: RAG Support Bot für Moodle (Demo, Anleitung, Feedback)",
-        "  - Abschnitt 9: Evaluation & Wrap-up (Abschlussbericht, Roadmap)",
-        "**Zusätzlich:** Wöchentliche Office Hours (Q&A, Support)"
-      ]
-    },
-    "imageUrls": [],
-    "relatedLinks": [],
-    "participants": ["Moodle.NRW-Community", "Lena Nedwed", "Alexander Mikasch"]
   }
 ] 
