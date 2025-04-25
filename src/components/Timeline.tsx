@@ -14,7 +14,7 @@ const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick, act
   const [visibleProjects, setVisibleProjects] = useState<Project[]>([]);
 
   // Sortierfunktion anpassen, um dateOrPeriod zu verwenden
-  const sortProjects = (a: Project, b: Project) => {
+  /*const sortProjects = (a: Project, b: Project) => {
     // Versuche, gültige Daten zu parsen, gib bei ungültigen Formaten einen Fallback-Wert
     const dateA = new Date(a.dateOrPeriod); 
     const dateB = new Date(b.dateOrPeriod);
@@ -31,7 +31,7 @@ const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick, act
     // Ansonsten normaler Datumsvergleich
     return timeA - timeB;
   };
-
+*/
   useEffect(() => {
     // let filteredData = projectsData as Project[]; -> wird const
     const filteredData = projectsData as Project[];
