@@ -148,6 +148,32 @@
     "participants": ["Alexander Mikasch"]
   },
   {
+    "id": "ki-oer-kurserstellung-orca-2024",
+    "type": "project",
+    "dateOrPeriod": "2024-10",
+    "status": "BEENDET",
+    "name": "Sinnvolle KI-Nutzung für OER: Von der Suche zur Kurserstellung (Vortrag und Prototyp für ORCA.nrw-Tagung)",
+    "useCases": ["Moodle Integration", "Automated Course Development", "Educational Technology", "Proof of Concept"],
+    "technologyConcepts": ["OERSI", "Moodle Webservice", "LangGraph", "React", "Chainlit"],
+    "technologies": "AI Assistant, OERSI API, Moodle API, React, Chainlit",
+    "shortSummary": "Proof of Concept (PoC) einer OER-Suche für die ORCA.nrw-Tagung, mit einer React-Anwendung und Chainlit-Backend zur Suche in OERSI. Demonstriert auch ein Konzept zur KI-gestützten Kurserstellung mit Moodle-Integration.",
+    "insights": {
+      "summary": [
+        "**PoC für ORCA.nrw-Tagung (OER-Suche):**",
+        "Das System umfasst ein System mit vier Akteuren (Assistent, User, OERSI, Moodle Webservice), das die Kurs- und Inhaltserstellung auf Basis von OERs erleichtert.",
+        "Der Agent führt den Nutzer, während der Moodle Webservice die Erstellung von Kursen und Inhalten in Moodle übernimmt."
+  ]
+    },
+    "imageUrls": [
+      "/src/assets/oer_assistant_start.png",
+      "/src/assets/oer_assistant_chat_search_math.png"
+    ],
+    "relatedLinks": [
+      { "label": "GitHub Repository (PoC)", "url": "https://github.com/Freakrider/orca_oer_demo" }
+    ],
+    "participants": ["Alexander Mikasch", "Bastian Schmidt-Kuhl"]
+  },
+  {
     "id": "agentic-mesh-research-2024",
     "type": "project",
     "dateOrPeriod": "2024-12-13",
@@ -183,14 +209,14 @@
         "**Prozessübersicht: Dynamisches Multi-Agenten-System in Moodle:**",
         "Es wurde unterrsucht, wie ein erweiterbares Multi-Agenten-System per HTTP/REST, semantischem Wissensgraph und LLM-Integration in Moodle-Plugins Aufgaben autonom bearbeitet und neue Agenten on-the-fly integriert.",
         "Agenten-Registrierung: Jeder Specialized Agent meldet sich per POST /agents/register beim Registry Service mit Fähigkeiten und Endpunkt-URL an.",
-        "Aufgabe einreichen: Nutzer senden über das React-Plugin in Moodle ihre Anfrage (z. B. „Quiz erstellen“) per REST/JSON an den Task Manager.",
+        "Aufgabe einreichen: Nutzer senden über das React-Plugin in Moodle ihre Anfrage (z. B. \"Quiz erstellen\") per REST/JSON an den Task Manager.",
         "Intent & Kontext: Task Manager ruft LLM-Agent (Intent-Parsing) und Wissens-Agent (SPARQL-Query) ab, um die Anfrage zu strukturieren und mit Domänenwissen anzureichern.",
         "Subtask-Dispatch: Task Manager erhält aktuelle Agentenliste via GET /agents/list und verteilt Subtasks als JSON an passende Specialized Agents.",
         "Wissens-Abruf: Specialized Agents holen bei Bedarf Fakten per JSON-Query vom Wissens-Agent.",
         "Ergebnisrücklauf: Jeder Agent liefert sein Teilergebnis als JSON an den Task Manager zurück.",
         "Aggregation & Rückgabe: Task Manager fasst alle Teilergebnisse zusammen und sendet das finale JSON an das React-Frontend, das es in Moodle darstellt.",
         "**Research Report: Agentic Mesh, Agent Twin und Event-Driven Architekturen:**",
-        "In der digitalen Transformation bieten Agentic Mesh, Agent Twin und event-driven Architekturen (EDA) ein zukunftsweisendes Fundament für autonome, skalierbare und resiliente Systeme. Das Agentic Mesh ermöglicht eine dezentrale Koordination spezialisierter KI-Agenten, die in Echtzeit zusammenarbeiten. Durch die Integration von Event-Driven Design (z. B. via Apache Kafka) reagieren diese Agenten dynamisch auf Ereignisse und passen Workflows adaptiv an.",
+        "In der digitalen Transformation bieten Agentic Mesh, Agent Twin und event-driven Architekturen (EDA) ein zukunftsweisendes Fundament für autonome, skalierbare und resiliente Systeme. Das Agentic Mesh ermöglicht eine dezentrale Koordination spezialisierter KI-Agenten, die in Echtzeit zusammenarbeiten. Durch die Integration von Event-Driven Design (z. B. via Apache Kafka) reagieren diese Agenten dynamisch auf Ereignisse und passen Workflows adaptiv an.",
         "Agent Twins fungieren als digitale Replikate realer Entitäten und optimieren Entscheidungen durch Simulationen und Datenanalysen.",
         "**Definition: Agentic Mesh:**",
         "Bezeichnet ein dezentrales Ökosystem aus KI-Agenten, die sich registrieren, kooperieren und gemeinsam komplexe Aufgaben lösen.",
@@ -198,7 +224,7 @@
         "Registry – Verzeichnis aller Agenten mit ihren Fähigkeiten und Reputation.",
         "Marketplace – Marktplatz, auf dem Teilaufgaben ausgeschrieben und Agenten zugewiesen werden.",
         "Trust & Safety – Mechanismen zur Prüfung von Zuverlässigkeit, Sicherheit und ethischer Konformität.",
-        "Kommunikationssystem – APIs und Protokolle als „Mesh“-Netzwerk für direkten Datenaustausch zwischen Agenten.",
+        "Kommunikationssystem – APIs und Protokolle als \"Mesh\"-Netzwerk für direkten Datenaustausch zwischen Agenten.",
         "**Ablauf:**",
         "Aufgabe wird analysiert und in Teilaufgaben zerlegt.",
         "Passende Agenten werden über Registry und Marketplace gefunden und geprüft.",
