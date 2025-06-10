@@ -25,4 +25,5 @@ export interface Project {
   imageUrls?: string[]; // URLs zu Bildern für das Projekt
   relatedLinks?: { label: string; url: string }[]; // Links zu externen Dokumenten/Seiten
   participants?: string[]; // Neues Feld für Beteiligte (optional)
+  presentedAt?: string[]; // Neues Feld für Veranstaltungen, bei denen das Projekt vorgestellt wurde
 } 

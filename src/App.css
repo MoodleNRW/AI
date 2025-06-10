@@ -1,5 +1,5 @@
 #root {
-  max-width: 1600px;
+  max-width: 2400px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -226,4 +226,51 @@
      left: -10px; /* Linie nach links anpassen */
      width: 10px;
   }
+
+  /* Veranstaltungen auf kleineren Bildschirmen */
+  .presentation-info.left,
+  .presentation-info.right {
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: none;
+    display: inline-block;
+  }
+}
+
+/* Styling für Veranstaltungen außerhalb der Kachel */
+.presentation-info {
+  position: absolute;
+  top: 20px;
+  font-size: 0.85em;
+  color: #4a5568;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2;
+  width: calc(50% - 40px);
+  word-wrap: break-word;
+}
+
+.presentation-info.left {
+  left: calc(100% + 70px); /* Rechts von der linken Kachel */
+}
+
+.presentation-info.right {
+  right: calc(100% + 70px); /* Links von der rechten Kachel */
+}
+
+.presentation-info .presentation-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #2d3748;
+}
+
+.presentation-info .presentation-events {
+  display: block;
+  font-style: italic;
+  line-height: 1.3;
 }

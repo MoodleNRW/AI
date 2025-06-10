@@ -42,6 +42,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, onHover, onClick, po
       title={project.type === 'external_milestone' ? 'Externer Meilenstein' : project.name}
       data-has-related={!!project.relatedMilestoneIds && project.relatedMilestoneIds.length > 0}
     >
+      {/* Veranstaltungen außerhalb der Kachel anzeigen */}
+      {project.presentedAt && project.presentedAt.length > 0 && (
+        <div className={`presentation-info ${positionClass}`}>
+          <span className="presentation-label">📅 Vorgestellt:</span>
+          <span className="presentation-events">{project.presentedAt.join(', ')}</span>
+        </div>
+      )}
+
       <h3>{project.name}</h3>
       <span className="date-period">
         {project.dateOrPeriod}

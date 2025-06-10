@@ -55,12 +55,12 @@
     "useCases": [],
     "technologyConcepts": ["LMS","RAG","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration", "Ilias Integration", "Llama 2"],
     "technologies": "Langchain, LLMs (Llama 2)",
-    "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle/Ilias-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt OSKI.",
+    "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle/Ilias-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt [OSKI](https://www.oski.nrw/).",
     "insights": {
       "summary": [
         "Ein Prototyp für einen Chatbot wurde entwickelt, der auf Basis von Kursinhalten in Moodle Fragen beantworten kann. Hierfür wurde ein simpler RAG-Ansatz (Retrieval Augmented Generation) gewählt, der auf lokaler Infrastruktur mit lokalen Modellen (zuerst Llama 2, später Llama 3) basiert.",
         "Dieser Prototyp wurde erfolgreich bei mehreren Veranstaltungen vorgestellt.",
-        "Das positive Feedback führte zur Entstehung des Projekts OSKI.",
+        "Das positive Feedback führte zur Entstehung des Projekts [OSKI](https://www.oski.nrw/).",
         "Das primäre Ziel dieses initialen Prototyps war ein Machbarkeitsbeweis (Proof of Concept)."
       ]
     },
@@ -145,6 +145,11 @@
         "Zudem wurden bald darauf alternative Werkzeuge wie Cursor, Cline und RooCode verfügbar, die analysiert wurden und als vielversprechende Ansätze für KI-unterstützte Code-Generierung eingeschätzt wurden."
       ]
     },
+    "imageUrls": [
+      "/src/assets/ilias_importer.png",
+      "/src/assets/kurs_import.png",
+      "/src/assets/moodle_konvert.png"
+    ],
     "participants": ["Alexander Mikasch"]
   },
   {
@@ -166,7 +171,9 @@
     },
     "imageUrls": [
       "/src/assets/oer_assistant_start.png",
-      "/src/assets/oer_assistant_chat_search_math.png"
+      "/src/assets/oer_assistant_chat_search_math.png",
+      "/src/assets/oer_assistant_process.png",
+      "/src/assets/oer_assistant_course_create.png"
     ],
     "relatedLinks": [
       { "label": "GitHub Repository (PoC)", "url": "https://github.com/Freakrider/orca_oer_demo" }
@@ -264,7 +271,7 @@
     "insights": {
       "summary": [
         "Entwicklung eines Wiki-Systems (basiert auf DokuWiki) für die Kooperation mit Moodle an Hochschulen E.V., das mithilfe von KI selbstständig lernt, Inhalte zu organisieren.",
-        "Es nutzt KI (Keyword-Extraktion, OpenAI-Themengenerierung, Clustering mit DBSCAN) um automatisch Themen in Wiki-Seiten zu erkennen, zu gruppieren und eine dynamische Struktur aufzubauen.",
+        "Es nutzt KI (Keyword-Extraktion, OpenAI-Themengenerierung, Clustering) um automatisch Themen in Wiki-Seiten zu erkennen, zu gruppieren und eine dynamische Struktur aufzubauen.",
         "Die Anbindung an DokuWiki (Seiten erstellen/ändern) funktioniert. "
       ]
     },

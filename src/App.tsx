@@ -100,7 +100,7 @@ function App() {
           color: '#003366',
           fontFamily: 'sans-serif'
         }}>
-          Einblicke in unsere Arbeiten um Generative KI: Prototypen & Researches
+          Einblicke in ausgewählte Arbeiten um Generative KI: Prototypen & Researches
         </h1>
         <p style={{
           fontSize: '0.9rem',
