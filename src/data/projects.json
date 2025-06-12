@@ -150,10 +150,33 @@
     },
     "imageUrls": [
       "/src/assets/ilias_importer.png",
-      "/src/assets/kurs_import.png",
+      "/src/assets/moodle_konvert.png",
       "/src/assets/moodle_konvert.png"
     ],
     "participants": ["Alexander Mikasch"]
+  }, {
+    "id": "devcamp-2024-9",
+    "type": "project",
+    "dateOrPeriod": "Start 2024-09-03/04",
+    "status": "BEENDET",
+    "name": "Multi-Agent RAG-System für den Moodle-Support (DevCamp Wien)",
+    "useCases": ["Moodle Support", "Multi-Agent", "RAG", "Workflow Automation"],
+    "technologyConcepts": ["Multi-Agent", "RAG", "Vector Database", "Webcrawler", "Moodle Plugin", "Support"],
+    "technologies": "Langchain, GPT-4, Vector Database, Moodle Plugin",
+    "shortSummary": "Prototyp eines Multi-Agent RAG-Systems zur Automatisierung des Moodle-Supports, entwickelt in 48 Stunden beim MoodleMoot DevCamp Wien.",
+    "insights": {
+      "summary": [
+        "Beim MoodleMoot DevCamp in Wien wurde in nur 48 Stunden ein funktionsfähiger Prototyp erstellt.",
+        "Ziel ist es, den Support für Studierende, Lehrende und Mitarbeitende zu verbessern, indem Anfragen automatisiert bearbeitet werden und Routineaufgaben entfallen.",
+        "**Funktionsweise des Systems:** Kleine spezialisierte Agenten führen einen mehrstufigen Retrieval-Prozess durch und nutzen eine Vektordatenbank, um passende Antworten zu finden.",
+        "Konnte keine Lösung gefunden werden, ist eine Eskalation an externe vorgesehen.",
+        "**Komponenten:** Webcrawler strukturiert Moodle-Dokumentationen; zukünftige Erweiterungen sollen PDF- und Bild-Verarbeitung ermöglichen.",
+        "**Support Companion Plugin:** Ein Moodle-Plugin automatisiert Aufgaben wie Kurserstellung; aktuell noch nicht vollständig integriert, aber Tests sind vielversprechend. **Hinweis:** Dieses Projekt wurde in einen weiteren Projekt umgesetzt und vervollständigt."
+      ]
+    },
+    "imageUrls": ["/src/assets/RAG_Support.png",
+    "/src/assets/rag_graph_visualization.png"],
+    "participants": ["Dr. Laura Troost", "Nikolai Jahreis", "Aly Sayed", "Jasmin vom Brocke", "Paola Maneggia", "Wolfgang Baier", "Alexander Mikasch", "Bastian Schmidt-Kuhl"]
   },
   {
     "id": "ki-oer-kurserstellung-orca-2024",
@@ -283,4 +306,5 @@
     ],
     "participants": ["Alexander Mikasch"]
   }
+ 
 ] 
