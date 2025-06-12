@@ -111,6 +111,16 @@ function App() {
         }}>
           Kontaktieren Sie uns bei Fragen, Kooperation etc. gerne unter <a href="mailto:kontakt@moodlenrw.de" style={{color: '#003366'}}>kontakt@moodlenrw.de</a>
         </p>
+        <p style={{
+          fontSize: '0.85rem',
+          marginTop: 0,
+          marginBottom: '10px',
+          color: '#666',
+          fontStyle: 'italic',
+          fontFamily: 'sans-serif'
+        }}>
+          Tipp: Für mehr Details klicken Sie einfach auf die Punkte in der Timeline.
+        </p>
       </header>
 
       <Routes>

@@ -53,9 +53,9 @@
     "status": "BEENDET",
     "name": "Let's Build: LLM Moodle Chatbot (OSKI)",
     "useCases": [],
-    "technologyConcepts": ["LMS","RAG","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration", "Ilias Integration", "Llama 2"],
+    "technologyConcepts": ["LMS","RAG","PGSQL / PGVector", "Vector Database", "Chatbot", "Moodle Integration", "ILIAS Integration", "Llama 2"],
     "technologies": "Langchain, LLMs (Llama 2)",
-    "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle/Ilias-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt [OSKI](https://www.oski.nrw/).",
+    "shortSummary": "Entwicklung eines RAG-Chatbot-Prototyps für Moodle/ILIAS-Kursinhalte. Erfolgreiche Vorstellung, führte zu Projekt [OSKI](https://www.oski.nrw/).",
     "insights": {
       "summary": [
         "Ein Prototyp für einen Chatbot wurde entwickelt, der auf Basis von Kursinhalten in Moodle Fragen beantworten kann. Hierfür wurde ein simpler RAG-Ansatz (Retrieval Augmented Generation) gewählt, der auf lokaler Infrastruktur mit lokalen Modellen (zuerst Llama 2, später Llama 3) basiert.",
@@ -140,10 +140,13 @@
         "**Technologien:** Python, Langchain/LangGraph, GPT-4/Claude 3.5 Sonnet",
         "Konzeption und Start der Entwicklung eines 'Proof of Concept' (PoC) für ein System aus mehreren KI-Agenten.",
         "Ziel war es, dass diese Agenten zusammenarbeiten, um automatisch einfache Moodle-Plugins zu erstellen (Analyse, Design, Code, Test). Dies sollte  die Plugin-Prototyp-Entwicklung effizienter machen.",
-        "Es wurde eine erste Version des Prototyps erstellt, die grundlegenden Plugins erstellen konnte. ",
-        "Das Thema wurde jedoch als sehr umfangreich bewertet. Eine Weiterentwicklung über den initialen Ansatz hinaus hätte voraussichtlich mehrere Wochen an Entwicklungszeit erfordert.",
-        "Zudem wurden bald darauf alternative Werkzeuge wie Cursor, Cline und RooCode verfügbar, die analysiert wurden und als vielversprechende Ansätze für KI-unterstützte Code-Generierung eingeschätzt wurden."
+        "Es wurde eine erste Version des Prototyps erstellt, die grundlegenden Plugins erstellen konnte, leider mit einigen Fehlern. ",
+        "Tests wurden gemacht mitz.B. Quiz-Response-Export, Moodle-Snake-Game, Moodle-Course-Translator",
+        "Das Thema wurde als relativ umfangreich bewertet. Eine Weiterentwicklung über den initialen Ansatz hinaus hätte voraussichtlich mehrere Wochen an Entwicklungszeit erfordert.",
+        "Zudem wurden bald darauf alternative Werkzeuge wie Cursor, Cline und RooCode verfügbar, die analysiert wurden und als vielversprechende Ansätze für KI-unterstützte Code-Generierung eingeschätzt wurden.",
+        "Hiermit lassen sich schon erste Plugins erstellen, die dann in der Praxis genutzt werden könnten siehe Anhang."
       ]
+
     },
     "imageUrls": [
       "/src/assets/ilias_importer.png",
@@ -214,7 +217,7 @@
     "insights": {
       "summary": [
         "**Prozessübersicht: Dynamisches Multi-Agenten-System in Moodle:**",
-        "Es wurde unterrsucht, wie ein erweiterbares Multi-Agenten-System per HTTP/REST, semantischem Wissensgraph und LLM-Integration in Moodle-Plugins Aufgaben autonom bearbeitet und neue Agenten on-the-fly integriert.",
+        "Es wurde untersucht, wie ein erweiterbares Multi-Agenten-System per HTTP/REST, semantischem Wissensgraph und LLM-Integration in Moodle-Plugins Aufgaben autonom bearbeitet und neue Agenten on-the-fly integriert.",
         "Agenten-Registrierung: Jeder Specialized Agent meldet sich per POST /agents/register beim Registry Service mit Fähigkeiten und Endpunkt-URL an.",
         "Aufgabe einreichen: Nutzer senden über das React-Plugin in Moodle ihre Anfrage (z. B. \"Quiz erstellen\") per REST/JSON an den Task Manager.",
         "Intent & Kontext: Task Manager ruft LLM-Agent (Intent-Parsing) und Wissens-Agent (SPARQL-Query) ab, um die Anfrage zu strukturieren und mit Domänenwissen anzureichern.",

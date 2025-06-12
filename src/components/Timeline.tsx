@@ -69,7 +69,7 @@ const Timeline: React.FC<TimelineProps> = ({ onProjectHover, onProjectClick, act
     <div className="timeline-container-visual">
       {visibleProjects.length > 0 ? (
         // Gefilterte Projekte mappen
-        visibleProjects.map((project, index) => {
+        visibleProjects.slice().reverse().map((project, index) => {
           const positionClass = index % 2 === 0 ? 'left' : 'right'; // Abwechselnd links/rechts
           return (
             <ProjectItem 
